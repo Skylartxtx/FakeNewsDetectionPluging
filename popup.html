@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  
+  <link rel="stylesheet" href="popup.css">
+
+</head>
+<body>
+  <h2>小查新闻检测</h2>
+  <textarea id="input-text" placeholder="建议粘贴完整新闻内容以保证预测结果的准确度"></textarea>
+  <button id="check-btn">文本检测</button>
+    <!-- 添加加载动画 -->
+  <div id="loading" class="spinner-box" style="display: none;">
+    <h4 style="color: aquamarine;"> 小查正在努力分析中。。。。。。。</h4>
+    <div class="blue-orbit leo"></div>
+    <div class="green-orbit leo"></div>
+    <div class="red-orbit leo"></div>
+    <div class="white-orbit w1 leo"></div>
+    <div class="white-orbit w2 leo"></div>
+    <div class="white-orbit w3 leo"></div>
+  </div>
+  <div id="result">
+        <!-- 新增饼图容器 -->
+    <div>小查建议：<span id="My_advice">等待输入</span></div>
+    <div class="charts--container" style="display: none;">
+      <div id="pieChart">
+        <svg id="pieChartSVG">
+          <defs>
+            <filter id='pieChartInsetShadow'>
+              <!-- 保持原有滤镜定义 -->
+            </filter>
+            <filter id="pieChartDropShadow">
+              <!-- 保持原有滤镜定义 -->
+            </filter>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <h4>内容来源: <span id="Media_sources">等待输入</span></h4>
+    <h4>检测是否为AI编写：<span id="ai_result">等待输入</span></h4>
+    <h4>写作风格得分：<span id="objectivity-score">等待输入</span>/100</h4>
+    <div id="objectivity-comment"></div>
+    <div id="wordcloud-container" style="margin-top: 20px;">
+      <h4>关键词词云：</h4>
+      <img id="wordcloud-img" style="width: 100%; height: auto;">
+    </div>
+  </div>
+
+  <script src="d3.v7.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

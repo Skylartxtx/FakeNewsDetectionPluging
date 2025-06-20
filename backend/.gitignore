@@ -1,0 +1,19 @@
+# 环境文件
+.env
+*.env.local
+
+# 数据库文件
+*.db
+*.sqlite
+
+# 日志文件
+*.log
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# Python相关
+__pycache__/
+*.py[cod]
+*.egg-info/
